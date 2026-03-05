@@ -197,7 +197,7 @@ def affine2theta(affine, input_w, input_h, target_w, target_h):
 
 def blur_blending(im1, im2, mask):
 
-    mask *= 255.0
+    mask = mask.astype(np.float32) * 255.0
 
     kernel = np.ones((10, 10), np.uint8)
     mask = cv2.erode(mask, kernel, iterations=1)
@@ -216,7 +216,7 @@ def blur_blending(im1, im2, mask):
 
 def blur_blending_cv2(im1, im2, mask):
 
-    mask *= 255.0
+    mask = mask.astype(np.float32) * 255.0
 
     kernel = np.ones((9, 9), np.uint8)
     mask = cv2.erode(mask, kernel, iterations=3)
@@ -239,12 +239,12 @@ def blur_blending_cv2(im1, im2, mask):
 def Poisson_blending(im1, im2, mask):
 
     # mask=1-mask
-    mask *= 255
+    mask = mask.astype(np.float32) * 255
     kernel = np.ones((10, 10), np.uint8)
     mask = cv2.erode(mask, kernel, iterations=1)
     mask /= 255
     mask = 1 - mask
-    mask *= 255
+    mask = mask.astype(np.float32) * 255
 
     mask = mask[:, :, 0]
     width, height, channels = im1.shape
