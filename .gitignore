@@ -2,3 +2,11 @@ __pycache__/
 *.pyc
 *~
 
+venv/
+.DS_Store
+Global/global_checkpoints.zip
+Global/checkpoints/
+Face_Enhancement/face_enhancement_checkpoints.zip
+Face_Enhancement/models/networks/sync_batchnorm/
+Global/detection_models/sync_batchnorm/
+test_data/
