@@ -3,3 +3,10 @@ __pycache__/
 *~
 
 venv/
+test_data/
+Face_Enhancement/models/networks/
+Global/detection_models/sync*
+Global/global_checkpoints.zip
+Global/global_checkpoints.zip.*
+Global/checkpoints/
+.DS_Store
