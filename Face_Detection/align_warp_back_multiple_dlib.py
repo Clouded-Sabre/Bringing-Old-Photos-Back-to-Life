@@ -258,7 +258,7 @@ def Poisson_blending(im1, im2, mask):
 
 def Poisson_B(im1, im2, mask, center):
 
-    mask *= 255
+    mask = mask.astype(np.float32) * 255
 
     result = cv2.seamlessClone(
         im2.astype("uint8"), im1.astype("uint8"), mask.astype("uint8"), center, cv2.NORMAL_CLONE
